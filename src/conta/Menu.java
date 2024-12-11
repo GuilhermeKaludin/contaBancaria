@@ -2,11 +2,25 @@ package conta;
 
 import java.util.Scanner;
 
+import conta.model.Conta;
 import conta.util.Cores;
 
 public class Menu {
 
 	public static void main(String[] args) {
+
+		// instanciamento | classe -> objeto utilizavel
+		Conta c1 = new Conta(123456, 0001, 1, "Maria", 500f);
+		c1.setSaldo(5000f);
+
+		c1.visualizar();
+		c1.sacar(12000.0f);
+		c1.visualizar();
+		c1.depositar(5000.0f);
+		c1.visualizar();
+
+		// System.out.println("Titular: " + c1.getTitular());
+		// System.out.println("Saldo: " + c1.getSaldo());
 
 		Scanner leia = new Scanner(System.in);
 
@@ -38,7 +52,7 @@ public class Menu {
 			opcao = leia.nextInt();
 
 			if (opcao == 9) {
-				System.out.println(Cores.TEXT_WHITE_BOLD + "\nBanco do Brazil com Z - O seu Futuro começa aqui!");
+				System.out.println(Cores.TEXT_WHITE_BOLD + "\nBanco do dinheiro - O seu Futuro começa aqui!");
 				sobre();
 				leia.close();
 				System.exit(0);
